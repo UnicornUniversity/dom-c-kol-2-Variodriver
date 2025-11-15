@@ -16,7 +16,7 @@ export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
     let currentModifier = 1
     let currentNumberIndex = inputNumber.length;
     
-    while (currentNumberIndex >= 0) {
+    while (currentNumberIndex > 0) {
         currentNumberIndex--;
         sum += currentModifier * Number.parseInt(inputNumber[currentNumberIndex])
         currentModifier *= 2;
