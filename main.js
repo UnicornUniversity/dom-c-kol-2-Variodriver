@@ -3,7 +3,7 @@
 //TODO add/change doc as needed
 /**
  * TODO - Write functional code for this application. You can call any other function, but usage of ".toString(numberSystem)" and "Number.parseInt(number, numberSystem)" is forbidden (only permitted when used on individual digits).
- * The main function which calls the application. 
+ * The main function which calls the application.
  * TODO - Please, add specific description here for the application purpose.
  * @param {string} inputNumber number that is being converted
  * @param {number} inputNumberSystem numerical system that the inputNumber is being converted from
@@ -11,9 +11,18 @@
  * @returns {string} containing number converted to output system
  */
 export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
-  //TODO code
-  //let dtoOut = exMain(inputNumber, inputNumberSystem, outputNumberSystem);
-  return dtoOut;
+    let sum = 0;
+
+    let currentModifier = 1
+    let currentNumberIndex = inputNumber.length;
+    
+    while (currentNumberIndex >= 0) {
+        currentNumberIndex--;
+        sum += currentModifier * Number.parseInt(inputNumber[currentNumberIndex])
+        currentModifier *= 2;
+    }
+
+    return sum.toString();
 }
 
 /**
@@ -22,7 +31,7 @@ export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
  * @returns {Array} array of numbers refering to permitted input systems
  */
 export function permittedInputSystems() {
-	return [10, 2];
+    return [2];
 }
 
 /**
@@ -31,5 +40,5 @@ export function permittedInputSystems() {
  * @returns {Array} array of numbers refering to permitted output systems
  */
 export function permittedOutputSystems() {
-	return [10, 2];
+    return [10];
 }
